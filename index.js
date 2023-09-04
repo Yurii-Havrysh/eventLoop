@@ -31,3 +31,9 @@ console.log('End of the program');
 //2 - setImmediate
 //3 - setTimeout
 
+//In general, setImmediate is designed to have higher priority for immediate execution of code. 
+//But some other factors like platform organization, event loop, micro tasks can influence its behavior.
+//In this case we have event loop and it is not located within an input/output cycle, 
+//so execution order of two timers is non-deterministic. 
+//However if we put these two calls in i/o cycle, setImmediate always be first :)
+
